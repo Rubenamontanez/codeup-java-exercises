@@ -1,4 +1,4 @@
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
@@ -13,12 +13,28 @@ public class ConsoleExercises {
 //        System.out.format("The value of pi is approximately. %.2f\n", almostPi);
 //
 ////        TODO: 1. Prompt a user to enter a integer and store that value in an int variable using the nextInt method
-//        Scanner in = new Scanner(System.in);
-//        int integer;
-//        System.out.print("Enter an integer: ");
-//        integer = in.nextInt();
-//        System.out.format("Here is what you entered: %d\n", integer);
-//        System.out.println(integer);
+
+//            Scanner in = new Scanner(System.in);
+//            int integer;
+//            System.out.print("Enter an integer: ");
+//            integer = in.nextInt();
+//            System.out.format("Here is what you entered: %d\n", integer);
+//            System.out.println(integer);
+
+//          Class example
+        Scanner scanner = new Scanner(System.in);
+            int i = 0;
+            while(i != -1){
+                System.out.print("Enter an integer: ");
+                try {
+                    i = scanner.nextInt();
+                    System.out.println("\nThe number is " + i + ".\n");
+                }catch (InputMismatchException ime){
+                    System.out.println("This is not an integer");
+                    i=0;
+                }
+            }
+
 
 ////        TODO: 2. Prompt a user to enter 3 words, and store each of them in a separate variable.
 ////        Then, display them back in the console, each on a newline.
@@ -51,21 +67,23 @@ public class ConsoleExercises {
 //        TODO: BONUS Calculate the volume of the rooms in addition to the area and perimeter.
         float length, width, height, area, perimeter, volume;
 
-        Scanner in = new Scanner(System.in);
-        System.out.printf("Enter the length of the classroom: ");
-        length = in.nextFloat();
-        System.out.format("Enter the width of the classroom: ");
-        width = in.nextFloat();
-        System.out.format("Enter the height of the room: ");
-        height = in.nextFloat();
-        area = length * width;
-        perimeter = 2 * (length + width);
-        volume = length * height * width;
-        System.out.printf("Area of the Room : %.2f\n", area );
-        System.out.printf("Perimeter of the Room : %.2f\n", perimeter);
-        System.out.printf("Volume of the room: %.2f\n", volume);
+//        Scanner in = new Scanner(System.in);
+//        System.out.println("Enter the length of the classroom: ");
+//        length = in.nextFloat();
+//        System.out.println("Enter the width of the classroom: ");
+//        width = in.nextFloat();
+//        System.out.format("Enter the height of the room: ");
+//        height = in.nextFloat();
+//        area = length * width;
+//        perimeter = 2 * (length + width);
+//        volume = length * height * width;
+//        System.out.printf("Area of the Room : %.2f\n", area );
+//        System.out.printf("Perimeter of the Room : %.2f\n", perimeter);
+//        System.out.printf("Volume of the room: %.2f\n", volume);
 
 
 
     }
 }
+// should we stay within the same public class for each function
+// difference between all the print functions
