@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -13,16 +14,17 @@ public class ControlFlowExercises {
 //        int i = 5;
 //        while (i <= 15) {
 //            System.out.print(i + " ");
-//            i = i + 1;
+//            i ++;
 //        }
 //        System.out.println(" ");
 
 //        TODO: Do While Create a do-while loop that will count by 2's starting with 0 and ending at 100. Follow each number with a new line.
+
 //        int count = 0;
 //        do
 //        {
-//            count = count += 2;
 //            System.out.println(count);
+//            count = count += 2;
 //        } while (count < 100);
 //        System.out.println();
 
@@ -52,20 +54,20 @@ public class ControlFlowExercises {
 //         Ask if the user wants to continue.Assume that the user will enter valid data.
 //         Only continue if the user agrees to.
 
-            int number,square,cube;
-            System.out.print(" What number would you like to go up to: ");
-            Scanner scanner = new Scanner(System.in);
-             number = scanner.nextInt();
-        System.out.print("\n");
-             System.out.println("Here is your table");
-        System.out.print("\n");
-            System.out.println("number | squared | cubed ");
-            System.out.println("-----  | ------- | ----- "  );
-           for(int i = 1; i <= number;  i ++) {
-               square = i * i;
-               cube = i * square;
-               System.out.println(i + "      |" + square + "        |" + cube);
-           }
+//            int number,square,cube;
+//            System.out.print(" What number would you like to go up to: ");
+//            Scanner scanner = new Scanner(System.in);
+//             number = scanner.nextInt();
+//        System.out.print("\n");
+//             System.out.println("Here is your table");
+//        System.out.print("\n");
+//            System.out.println("number | squared | cubed ");
+//            System.out.println("-----  | ------- | ----- "  );
+//           for(int i = 1; i <= number;  i ++) {
+//               square = i * i;
+//               cube = i * square;
+//               System.out.println(i + "      |" + square + "        |" + cube);
+//           }
 
 //           TODO: Convert given number grades into letter grades.
 //            Prompt the user for a numerical grade from 0 to 100.
@@ -78,20 +80,39 @@ public class ControlFlowExercises {
 //        System.out.print(" What was your test grade: ");
 //        Scanner scanner = new Scanner(System.in);
 //        testScore = scanner.nextInt();
-//           char grade;
-//           if (testScore>= 88){
-//               grade = 'A';
-//           }else if (testScore>=80){
-//               grade = 'B';
+//           String grade;
+//
+//           if (testScore>= 95){
+//               grade = "A+";
+//           }else if (testScore>= 88){
+//               grade = "A-";
+//           } else if (testScore>=84){
+//               grade = "B+";
+//           }else if (testScore>= 80){
+//               grade = "B-";
+//           }else if (testScore>=73){
+//               grade = "C+";
 //           }else if (testScore>=67){
-//               grade = 'C';
+//               grade = "C-";
+//           }else if (testScore>=64){
+//               grade = "D-";
 //           }else if (testScore>=60){
-//                grade = 'D';
+//                grade = "D-";
 //           } else {
-//               grade = 'F';
+//               grade = "F";
 //           }
 //        System.out.println("you got an: " + grade);
 //        System.out.println("Would you like to continue?");
+
+
+
+
+                long n = 461012;
+                System.out.format("%d%n", n);      //  -->  "461012"
+                System.out.format("%08d%n", n);    //  -->  "00461012"
+                System.out.format("%+8d%n", n);    //  -->  " +461012"
+                System.out.format("%,8d%n", n);    // -->  " 461,012"
+                System.out.format("%+,8d%n%n", n); //  -->  "+461,012"
     }
 }
 
