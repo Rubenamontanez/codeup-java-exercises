@@ -5,11 +5,13 @@ public class MethodsExercises {
     public static void main(String [] args){
 //        System.out.println(addS(2, 3));
 //        System.out.println(subS(2,3));
-//        mulT(2,3);
-//        divI(2,3);
+//        System.out.println(mulT(2,3));
+//        System.out.println(divI(2,3));
 //          System.out.print("Enter a number between 1 and 10: ");
 //        System.out.println("userInput = " + getInteger(1, 10));
-//        rollTheDice();
+
+
+//            rollTheDice();
 
 
     }
