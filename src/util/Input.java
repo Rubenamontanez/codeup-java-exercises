@@ -1,77 +1,107 @@
+
 package util;
 
 import java.util.Scanner;
 
 public class Input {
-//    TODO:Inside of util, create a class named Input that has a private property named scanner.
+
     private Scanner scanner;
 
-//    TODO: When an instance(means inside this class of input) of this object is created,
-//     the scanner property should be set to a new instance of the Scanner class.
     public Input(){
         this.scanner = new Scanner(System.in);
     }
-    public String getString(){
-        String answer;
-        System.out.println("type out a string: ");
-        answer = this.scanner.next();
-        return answer;
+
+    public String getString() {
+        return this.scanner.nextLine();
     }
 
-    public boolean yesNo(){
-        String answer;
-        System.out.println("is it a boolean?;");
-        answer =this.scanner.next();
-        return answer.toLowerCase().startsWith("y");
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        return this.getString();
     }
 
-    public int getInt (int min, int max){
-        int answer;
-        do
-        {
-            System.out.println("enter a number between" + min + " and " + max);
-            answer = this.scanner.nextInt();
-        } while  (answer < min || answer > max);
-         return answer;
-        }
+    public boolean yesNo() {
+        String answer = this.scanner.nextLine();
+        if (answer.equalsIgnoreCase("y")
+                || answer.equalsIgnoreCase("yes")) {
+            return true;
+        } else return false;
+    }
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        return this.yesNo();
+    }
 
-    public int getInt(){
-        System.out.println("Give me a number: ");
-        int number;
-        try{
-            number = Integer.valueOf(getString());
-            return number;
-        } catch (NumberFormatException nfe){
-            System.out.println("Wrong input, try again: ");
+    public int getInt() {
+        String answer;
+        answer = this.scanner.nextLine();
+        try {
+            return Integer.valueOf(answer);
+        } catch (NumberFormatException ex) {
+            System.out.printf("%s is not an integer%n", answer);
             return getInt();
         }
     }
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        return this.getInt();
+    }
+
+    public int getInt(int min, int max) {
+        do {
+            System.out.printf("Please enter a number between %d and %d : ", min, max);
+
+            String input = this.scanner.nextLine();
+            int answer;
+            try {
+                answer = Integer.valueOf(input);
+            } catch (NumberFormatException ex) {
+                continue;
+            }
+
+            if (answer >= min && answer <= max) {
+                return answer;
+            }
+        } while (true);
+    }
 
     public double getDouble(double min, double max) {
-        double number = getDouble();
-        if(number < min){
-            System.out.println(String.format("Number outside of range (%f - %f)", min, max));
-            return getDouble(min, max);
-        } else if (number > max) {
-            System.out.println(String.format("Number outside of range (%f - %f)", min, max));
-            return getDouble(min, max);
-        }
+        do {
+            System.out.printf("Please enter a number between %f and %f : ", min, max);
+            String input = this.scanner.nextLine();
 
-        return number;
+            double answer;
+            try {
+                answer = Double.valueOf(input);
+            } catch (NumberFormatException ex) {
+                continue;
+            }
+            if (answer >= min && answer <= max) {
+                return answer;
+            }
+        } while (true);
+
     }
-    public double getDouble(){
-        System.out.println("Give me a decimal: ");
-        double number;
-        try{
-            number = Double.valueOf(getString());
-            return number;
-        } catch (NumberFormatException nfe){
-            System.out.println("Wrong input, try again: ");
+    public double getDouble() {
+        String answer;
+        answer = this.scanner.nextLine();
+        try {
+            return Double.valueOf(answer);
+        } catch (NumberFormatException ex) {
+            System.out.printf("%s is not a number%n", answer);
             return getDouble();
         }
     }
+    public double getDouble(String prompt) {
+        System.out.println(prompt);
+        return this.getDouble();
+    }
 
+    public static void main(String[] args) {
+        Input input = new Input();
+//        System.out.println("Enter your answer (y|n)?");
+//        System.out.println(input.yesNo());
+        System.out.println(input.getDouble());
+
+    }
 }
-
-
-// will not compile if nothing is returned
