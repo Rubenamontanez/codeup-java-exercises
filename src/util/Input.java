@@ -38,7 +38,7 @@ public class Input {
         try {
             return Integer.valueOf(answer);
         } catch (NumberFormatException ex) {
-            System.out.printf("%s is not an integer%n", answer);
+            System.out.printf("%s is not an integer heres the exception%n", answer);
             return getInt();
         }
     }
@@ -63,7 +63,9 @@ public class Input {
                 return answer;
             }
         } while (true);
+
     }
+
 
     public double getDouble(double min, double max) {
         do {
@@ -88,7 +90,7 @@ public class Input {
         try {
             return Double.valueOf(answer);
         } catch (NumberFormatException ex) {
-            System.out.printf("%s is not a number%n", answer);
+            System.out.printf("%s is not a number here is the exception %n", answer);
             return getDouble();
         }
     }
@@ -98,10 +100,13 @@ public class Input {
     }
 
     public static void main(String[] args) {
-        Input input = new Input();
+//        Input input = new Input();
 //        System.out.println("Enter your answer (y|n)?");
 //        System.out.println(input.yesNo());
-        System.out.println(input.getDouble());
+        System.out.println("enter a double");
+//        System.out.println(input.getInt());
+
+//        System.out.println(input.getInt());
 
     }
 }
