@@ -21,8 +21,6 @@ public class Account {
         System.out.println(a.getAge());
         System.out.println(a.getName());
 
-
-
     }
 //    getters and setters examples
     public void setName(String name){
