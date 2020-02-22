@@ -17,7 +17,7 @@ public class Dog{
     }
 
     void bark(){
-//        cannot be accessed ib the run method
+//        cannot be accessed in the run method
 //          they are local variables local in scope by nature
         int x;
     }
