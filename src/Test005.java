@@ -6,7 +6,6 @@ public class Test005 {
         int count = 6;
         int min = 1;
         int max = 49;
-
         // random number mapped to the count of its occurrences
         TreeMap<Integer, Integer> mp = new TreeMap<Integer, Integer>();
         for (int i=0; i<count; i++){
